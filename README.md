@@ -3,7 +3,7 @@ This adds a new API for simplistic roles in among us.
 Permission for use is granted, as long as you credit me.
 
 # Documentation
-Documatation for this API is being worked on.
+https://github.com/DillyzThe1/DillyzRoleApi/blob/main/instructions/guide.md
 
 # Discord
 https://discord.gg/Xfk4FUep - Get sneak peeks at new mods or updates and chat around!
