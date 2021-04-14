@@ -11,7 +11,7 @@ namespace DillyzRolesAPI.Roles
 {
     public class staticvars
     {
-        public static bool noColorYoinking = false;
+        public static bool noColorYoinking = true;
     }
     public class RoleGenerator : MonoBehaviour
     {
