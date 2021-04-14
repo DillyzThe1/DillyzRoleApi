@@ -21,7 +21,7 @@ https://github.com/CrowdedMods/CrowdedMod/blob/master/src/CrowdedMod/Patches/Gen
 The rest of API was written out of my knowledge of unity and past experiences.
 
 # Note
-You will need Reactor for this. This is provided in the download.
+You will need Reactor for this. This is provided in the download, but can also be excluded.
 The original file of Reactor: https://github.com/NuclearPowered/Reactor/actions
 If you have any problems with this api or me as a creator, feel free to ping me in my server or the reactor server. (DM's are off)
 Discord: https://discord.gg/Xfk4FUep
