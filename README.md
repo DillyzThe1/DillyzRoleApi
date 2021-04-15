@@ -6,7 +6,7 @@ Permission for use is granted, as long as you credit me.
 https://github.com/DillyzThe1/DillyzRoleApi/blob/main/instructions/guide.md
 
 # Discord
-https://discord.gg/Xfk4FUep - Get sneak peeks at new mods or updates and chat around!
+https://discord.gg/49NFTwcYgZ - Get sneak peeks at new mods or updates and chat around!
 https://discord.gg/2GTBQPMEVb - My main server full of chaos, designed for my YouTube channel.
 
 # Original Idea
