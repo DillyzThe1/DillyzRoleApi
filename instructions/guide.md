@@ -18,7 +18,7 @@ Step 2: Click "Browse" and go to "C:\Program Files (x86)\Steam\steamapps\common\
 Step 3: Click "Add" like a normal person and start creating!
 
 (Your dependencies dropdown should look like this now)
-![Github Logo](/instructions/pics/browse.png)
+![Github Logo](/instructions/pics/depend.png)
 
 # Adding a role 
 In your HarmonyMain.cs file, you need to add a new static RoleGenerator to the game.
