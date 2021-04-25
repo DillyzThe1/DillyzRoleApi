@@ -13,7 +13,7 @@ namespace DillyzRolesAPI.Roles
     [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.RpcSetInfected))]
     class SetInfectedPatch
     {
-        public static void Postfix(Il2CppReferenceArray<GameData.PlayerInfo> BHNEINNHPIJ)
+        public static void Postfix([HarmonyArgument(0)] Il2CppReferenceArray<GameData.PlayerInfo> infected)
         {
             Main.Config.SetConfigSettings();
             Main.Logic.AllModPlayerControl.Clear();

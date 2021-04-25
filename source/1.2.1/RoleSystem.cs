@@ -179,7 +179,7 @@ namespace DillyzRolesAPI.Roles
                     byte[] array = Properties.Resources.sus;
                     passiveCreditsPatch.bundle = AssetBundle.LoadFromMemory(array);
                 }
-                if (staticvars.shamelessDiscordPromo)
+                /*if (staticvars.shamelessDiscordPromo)
                 {
                     GameObject thatDiscButton = GameObject.Instantiate(passiveCreditsPatch.bundle.LoadAsset<GameObject>("SelfPromo").DontUnload());
                     thatDiscButton.transform.parent = GameObject.Find("BottomButtons").transform;
@@ -187,7 +187,7 @@ namespace DillyzRolesAPI.Roles
                     thatDiscButton.GetComponent<ButtonBehavior>().OnClick.AddListener((UnityEngine.Events.UnityAction)listener);
                     thatDiscButton.GetComponent<Image>().sprite = passiveCreditsPatch.bundle.LoadAsset<Sprite>("discord").DontUnload();
                     thatDiscButton.name = "ShamelessSelfPromo"; // please tell me what i did wrong
-                }
+                }*/
             }
             public static void listener()
             {
