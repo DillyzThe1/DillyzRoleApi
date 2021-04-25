@@ -16,7 +16,7 @@ namespace DillyzRolesAPI.Roles
             {
                 upMetPatch.Postfix(MeetingHud.Instance);
             }
-            else
+            else if (ShipStatus.Instance != null)
             {
                 if (PlayerControl.LocalPlayer.Data.IsImpostor)
                     PlayerControl.LocalPlayer.nameText.color = Palette.ImpostorRed;
