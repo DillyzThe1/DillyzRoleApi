@@ -93,7 +93,7 @@ namespace DillyzRolesAPI.Roles
         public static KillButtonManager KillButton;
         public static int KBTarget;
         public static double DistLocalClosest;
-        public static string versionString = "1.1.0";
+        public static string versionString = "1.2.0";
         public class ModdedConfig
         {
             public bool undeadSpeaks { get; set; }
