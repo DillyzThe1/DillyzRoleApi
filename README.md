@@ -18,6 +18,7 @@ https://discord.gg/2GTBQPMEVb - My main server full of chaos, designed for my Yo
 # Sourced code
 https://github.com/NotHunter101/ExtraRolesAmongUs
 https://github.com/CrowdedMods/CrowdedMod/blob/master/src/CrowdedMod/Patches/GenericPatches.cs
+https://github.com/Galster-dev/CrowdedSheriff
 The rest of API was written out of my knowledge of unity and past experiences.
 
 # Note

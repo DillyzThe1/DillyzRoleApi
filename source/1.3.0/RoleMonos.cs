@@ -25,6 +25,7 @@ namespace DillyzRolesAPI.Roles
         public bool isEnabled { get; set; }
         public bool canVent { get; set; }
         public List<byte> containedPlayerIds { get; set; }
+        public int roleCount { get; set; }
         public void Awake()
         {
             this.containedPlayerIds = new List<byte>();

@@ -8,6 +8,7 @@ using Reactor;
 using Reactor.Networking;
 using UnhollowerBaseLib;
 using static DillyzRolesAPI.Roles.Extensions;
+using DillyzRolesAPI.Options;
 
 namespace DillyzRolesAPI.RPC
 {
@@ -61,7 +62,8 @@ namespace DillyzRolesAPI.RPC
     {
         setRole,
         setLocalVars,
-        resetVars
+        resetVars,
+        sendOption
     }
     [RegisterCustomRpc((uint)CustomRpcCalls.setRole)]
     public class SetRole : PlayerCustomRpc<RoleAPI, (byte, string)> //killer id, player id
@@ -131,6 +133,43 @@ namespace DillyzRolesAPI.RPC
             {
                 role.containedPlayerIds.Clear();
                 role.containedPlayerIds = new List<byte>();
+            }
+        }
+    }
+    [RegisterCustomRpc((uint)CustomRpcCalls.sendOption)]
+    public class SendOpt : PlayerCustomRpc<RoleAPI, (bool, float, bool, int)> // isNumber, numbValue, boolValue, optTitle
+    {
+        public SendOpt(RoleAPI plugin, uint id) : base(plugin, id)
+        { }
+        public override RpcLocalHandling LocalHandling => RpcLocalHandling.None;
+        public override void Write(MessageWriter writer, (bool, float, bool, int) data)
+        {
+            writer.Write(data.Item1);
+            writer.Write(data.Item2);
+            writer.Write(data.Item3);
+            writer.Write(data.Item4);
+        }
+        public override (bool, float, bool, int) Read(MessageReader reader)
+        {
+            bool item1 = reader.ReadBoolean();
+            float item2 = reader.ReadSingle();
+            bool item3 = reader.ReadBoolean();
+            int item4 = reader.ReadInt32();
+            return (item1, item2, item3, item4);
+        }
+        public override void Handle(PlayerControl innerNetObject, (bool, float, bool, int) data)
+        {
+            if (data.Item1)
+            {
+                foreach (CustomNumberOption custom in CustomOptions.numOpts)
+                    if (custom.optTitleInt == data.Item4)
+                        custom.value = data.Item2;
+            }
+            else
+            {
+                foreach (CustomBoolOption custom in CustomOptions.boolOpts)
+                    if (custom.optTitleInt == data.Item4)
+                        custom.value = data.Item3;
             }
         }
     }

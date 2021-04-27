@@ -33,8 +33,24 @@ There are a limited amount, but there is a way to patch stuff yourself.
 (This is a screenshot from the sensei mod.)
 
 "What if I want a setting to determine if my role is enabled?"
-Well, I can't help you with creating settings, but if you know how to do custom settings you prefix/postfix HudManager.Update to make yourRole.isEnabled be the same as your setting.
+Keep reading to the next section and then patch PlayerControl.RpcSetInfected.
+![Github Logo](/instructions/pics/rpcsetinfected.png)
 (isEnabled is a bool within my custom mono called "RoleGenerator", so make sure to always set true or false.)
+
+# Making a setting
+Custom options: We all need it, but its uncommon to find.
+(NOTE: These settings will only work with other mods that use this api or mods without settings at all.)
+(Use any settings api at your compatibility own risk)
+First, you need to do something similar to roles:
+![Github Logo](/instructions/pics/options.png)
+
+Next, you'll need to set the values you need for them.
+![Github Logo](/instructions/pics/boolandnumb.png)
+TIP: Use .IncrementValue to set how much it goes up or down.
+
+Boom! Settings!
+![Github Logo](/instructions/pics/lmaoileakmyownmods.png)
+(Note: "Have Dictator" doesn't appear here due to being scrapped for dictator, as it was only a testing feature)
 
 # Reading roles
 The way to read if someone is a role is simple.

@@ -97,7 +97,7 @@ namespace DillyzRolesAPI.Roles
         public static KillButtonManager KillButton;
         public static int KBTarget;
         public static double DistLocalClosest;
-        public static string versionString = "1.2.0";
+        public static string versionString = "1.3.0";
         public class ModdedConfig
         {
             public bool undeadSpeaks { get; set; }
@@ -111,6 +111,7 @@ namespace DillyzRolesAPI.Roles
         {
             static void Postfix(VersionShower __instance)
             {
+                var OGTEXT = __instance.text.text;
                 var obj = new GameObject();
                 foreach (GameObject gameObj in UnityEngine.Object.FindObjectsOfType<GameObject>())
                     if (gameObj.name.StartsWith("ReactorVersion"))
@@ -120,7 +121,7 @@ namespace DillyzRolesAPI.Roles
                 if (modsText != null)
                     foreach (string str in modsText)
                         __instance.text.text += "\n";
-                __instance.text.text += "2021.4.14s";
+                __instance.text.text += OGTEXT;
                 if (modsText != null)
                     foreach (string str in modsText)
                         __instance.text.text += "\n" + str;
@@ -143,7 +144,7 @@ namespace DillyzRolesAPI.Roles
                 __instance.text.text += ping;
                 foreach (string str in pingText)
                     __instance.text.text += "\n" + str;
-                __instance.text.text += "\n" + ping + "\nDillyzRoleApi " + versionString + "\n<#3AA3D9>github.com/DillyzThe1</color>";
+                __instance.text.text += "\nDillyzRoleApi " + versionString + "\n<#3AA3D9>github.com/DillyzThe1</color>";
             }
         }
         [HarmonyPatch(typeof(StatsManager), nameof(StatsManager.AmBanned), MethodType.Getter)]
@@ -168,7 +169,7 @@ namespace DillyzRolesAPI.Roles
                 }
             }
         }*/
-        [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
+        //[HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
         public class passiveCreditsPatch
         {
             public static AssetBundle bundle; // this is set aswell

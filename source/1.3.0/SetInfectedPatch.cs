@@ -30,19 +30,20 @@ namespace DillyzRolesAPI.Roles
             crewmates.RemoveAll(x => x.Data.IsImpostor);
             foreach (RoleGenerator role in allRoles)
                 if (role.isEnabled)
-                {
-                    var roleRandom = rng.Next(0, crewmates.Count);
-                    List<PlayerControl> therealones = new List<PlayerControl>();
-                    PlayerControl borgorking = null;
-                    foreach (PlayerControl player in crewmates)
-                        if (player != crewmates[roleRandom])
-                            therealones.Add(player);
-                        else
-                            borgorking = player;
-                    crewmates = therealones;
-                    role.containedPlayerIds.Add(borgorking.PlayerId);
-                    Rpc<SetRole>.Instance.Send((borgorking.PlayerId, role.NameOfRole));
-                }
+                    for (int i = 0; i < role.roleCount; i++)
+                    {
+                        var roleRandom = rng.Next(0, crewmates.Count);
+                        List<PlayerControl> therealones = new List<PlayerControl>();
+                        PlayerControl borgorking = null;
+                        foreach (PlayerControl player in crewmates)
+                            if (player != crewmates[roleRandom])
+                                therealones.Add(player);
+                            else
+                                borgorking = player;
+                        crewmates = therealones;
+                        role.containedPlayerIds.Add(borgorking.PlayerId);
+                        Rpc<SetRole>.Instance.Send((borgorking.PlayerId, role.NameOfRole));
+                    }
             localPlayers.Clear();
             localPlayer = PlayerControl.LocalPlayer;
             foreach (PlayerControl player in PlayerControl.AllPlayerControls)
